@@ -8,7 +8,7 @@ import ExpandLess from 'material-ui/svg-icons/navigation/expand-less';
 import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 
-const data = {
+const Pagedata = {
   menus: [
     { text: 'DashBoard', icon: <Assessment/>, link: '/dashboard' },
     { text: 'Form Page', icon: <Web/>, link: '/form' },
@@ -65,4 +65,4 @@ const data = {
   }
 };
 
-export default data;
+export default Pagedata;

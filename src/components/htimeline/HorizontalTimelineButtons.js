@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
-import Constants from '../Constants';
+import Constants from './Constants';
 
 // icons
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
@@ -106,7 +106,7 @@ const HorizontalTimelineButtons = (props) => {
       </li>
     </ul>
   );
-}
+};
 
 
 // Expected propteries

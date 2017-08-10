@@ -51,6 +51,11 @@ const dots = {
     backgroundColor: styles.foreground,
     border: `2px solid ${styles.foreground}`,
   }),
+
+  today: (styles) => ({
+    backgroundColor: '#cc2077',
+    border: `0`,
+  }),
 };
 
 
@@ -63,6 +68,23 @@ const dots = {
 class TimelineDot extends React.Component {
 
   __getDotStyles__ = (dotType, key) => {
+    const today = new Date();
+    if(key === today.toLocaleDateString()) {
+
+        const hoverStyle = {
+            backgroundColor: '#cc2077',
+            border: `0`,
+        };
+
+        return [
+            dots.base,
+            { left: this.props.labelWidth / 2 - dots.base.width / 2},
+            dots[dotType](this.props.styles),
+            Radium.getState(this.state, key, ':hover') || Radium.getState(this.state, 'dot-dot', ':hover')
+                ? hoverStyle
+                : undefined,
+        ]
+    }
     const hoverStyle = {
       backgroundColor: this.props.styles.foreground,
       border: `2px solid ${this.props.styles.foreground}`,
@@ -79,11 +101,15 @@ class TimelineDot extends React.Component {
   }
 
   render() {
-    let dotType = 'future';
+    let dotType = 'future';    
     if (this.props.index < this.props.selected) {
       dotType = 'past';
     } else if (this.props.index === this.props.selected) {
       dotType = 'present';
+    }
+
+    if (this.props.label === 'Today') {
+        dotType = 'today';
     }
 
     return (

@@ -14,7 +14,6 @@ import InfoBox from "../components/dashboard/InfoBox";
 import HorizontalTimelineContent from "../components/dashboard/HorizontalTimelineContent";
 import globalStyles from "../styles";
 
-import TimeInfo from '../resources/content';
 
 const DashboardPage = () => {
   return (

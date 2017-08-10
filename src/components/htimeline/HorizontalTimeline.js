@@ -34,25 +34,29 @@ class HorizontalTimeline extends React.Component {
       return false;
     }
 
+    const visibleWidth = this.props.containerWidth - 80;
+
     // Convert the date strings to actual date objects
     const dates = props.values.map((value) => new Date(value));
     // Calculate the distances for all events
-    const distances = cummulativeSeperation (
+    const distances = cummulativeSeperation(
       dates,
       props.labelWidth,
       props.minEventPadding,
       props.maxEventPadding,
       props.linePadding,
+      visibleWidth
     );
 
+    var today = new Date();
     // Convert the distances and dates to events
     const events = distances.map((distance, index) => ({
       distance,
-      label: props.getLabel(props.values[index], index),
+      label: props.values[index] === today.toLocaleDateString() ? 'Today' : props.getLabel(props.values[index], index),
       date: props.values[index],
     }));
 
-    const visibleWidth = this.props.containerWidth - 80;
+    
 
     const totalWidth = Math.max(
       events[events.length - 1].distance + this.props.linePadding,

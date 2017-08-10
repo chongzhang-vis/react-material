@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { cummulativeSeperation } from '../helpers';
+import { cummulativeSeperation } from './Helpers';
 import TimelineDot from './TimelineDot';
 
 /**

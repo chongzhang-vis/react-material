@@ -62,11 +62,12 @@ class Header extends React.Component {
                 <MenuItem key={2} primaryText="Application 2" />
                 <MenuItem key={3} primaryText="Application 3" />
               </IconMenu>{" "}
+              {/*
               <IconMenu
                 color={white}
                 iconButtonElement={
                   <IconButton>
-                    {" "}<MoreVertIcon color={white} />
+                    <MoreVertIcon color={white} />
                   </IconButton>
                 }
                 targetOrigin={{ horizontal: "right", vertical: "top" }}
@@ -75,11 +76,12 @@ class Header extends React.Component {
                 <MenuItem
                   primaryText="Sign out"
                   containerElement={<Link to="/login" />}
-                />{" "}
-              </IconMenu>{" "}
+                />
+              </IconMenu>
+              */}
             </div>
           }
-        />{" "}
+        />
       </div>
     );
   }

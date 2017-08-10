@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import LeftDrawer from '../components/LeftDrawer';
 import withWidth, {LARGE, SMALL} from 'material-ui/utils/withWidth';
 import ThemeDefault from '../theme-default';
-import Data from '../data';
+import Pagedata from '../pagedata';
 
 class App extends React.Component {
 
@@ -48,7 +48,7 @@ class App extends React.Component {
                   handleChangeRequestNavDrawer={this.handleChangeRequestNavDrawer.bind(this)}/>
 
             <LeftDrawer navDrawerOpen={navDrawerOpen}
-                        menus={Data.menus}
+                        menus={Pagedata.menus}
                         username="User Admin"/>
 
             <div style={styles.container}>

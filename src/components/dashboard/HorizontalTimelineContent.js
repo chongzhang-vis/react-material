@@ -1,10 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
-
 import HorizontalTimeline from '../htimeline/HorizontalTimeline';
 import HorizontalTimelineConfigurator from './HorizontalTimelineConfigurator';
 
-import TimeInfo from '../resources/content';
+import TimeInfo from '../../resources/content';
 
 export default class HorizontalTimelineContent extends React.Component {
   constructor(props) {
@@ -36,16 +35,21 @@ export default class HorizontalTimelineContent extends React.Component {
       return ({
         date: game.date,
         component: (
-          <div className='container' key={index}>
-            <h1>{ `The Elder Scrolls ${index + 1}:`}</h1>
+          <div style={{width: '100%' }} key={index}>
+            {/*<h1>{ `The Elder Scrolls ${index + 1}:`}</h1>*/}
+            <h1>{ game.title }</h1>
             <h2>{ game.subtitle }</h2>
-            <hr />
+            
             <p>{ game.content}</p>
             <hr />
           </div>
         )
       });
     });
+
+    const today = new Date();
+    this.data.push({date: today.toLocaleDateString(), today: true});
+    this.data.sort((a, b) => { return new Date(a.date) - new Date(b.date)})
   }
 
 //   static propTypes = {
@@ -67,7 +71,7 @@ export default class HorizontalTimelineContent extends React.Component {
 
     const views = this.data.map((entry, index) => {
       return (
-        <div className='container' key={index}>
+        <div style={{ width: '100%'}} key={index}>
           { entry.component }
         </div>
       );
@@ -87,7 +91,7 @@ export default class HorizontalTimelineContent extends React.Component {
 
     return (
       <div>
-        <div style={{ width: '60%', height: '100px', margin: '0 auto' }}>
+        <div style={{ width: '100%', height: '100px', margin: '0 auto' }}>
           <HorizontalTimeline
             fillingMotion={{ stiffness: state.fillingMotionStiffness, damping: state.fillingMotionDamping }}
             index={this.state.value}
@@ -122,6 +126,7 @@ export default class HorizontalTimelineContent extends React.Component {
             {views}
           </SwipeableViews>
         </div>
+        {/*
         <div className='checkbox text-center' >
           <label>
             <input
@@ -134,6 +139,7 @@ export default class HorizontalTimelineContent extends React.Component {
           </label>
         </div>
         { configurator }
+        */}
       </div>
     );
   }
