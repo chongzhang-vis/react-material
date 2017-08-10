@@ -63,7 +63,7 @@ const TablePage = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {Data.tablePage.items.map(item =>
+            {Pagedata.tablePage.items.map(item =>
               <TableRow key={item.id}>
                 <TableRowColumn style={styles.columns.id}>{item.id}</TableRowColumn>
                 <TableRowColumn style={styles.columns.name}>{item.name}</TableRowColumn>

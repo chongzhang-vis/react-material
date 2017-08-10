@@ -65,9 +65,6 @@ export const cummulativeSeperation = (dates, labelWidth, minEventPadding, maxEve
   const dateExtremes = dateDistanceExtremes(dates);
   const datesDiff = dateExtremes.max - dateExtremes.min;
   
-  const datesSpan = daydiff(Math.min.apply(null, dates), Math.max.apply(null, dates) );
-  const datesWithPerSpan = visibleWidth / datesSpan;
-
   const paddingDiff = maxEventPadding - minEventPadding;
   // const halfLabel = labelWidth / 2;
 

@@ -33,7 +33,7 @@ class Header extends React.Component {
       <div>
         <AppBar
           style={{ ...styles, ...style.appBar }}
-          title="AppStudio"
+          title="AppStudio 2.1"
           /* title={
                             <SearchBox />
                           } */
