@@ -48,7 +48,7 @@ const LeftDrawer = props => {
 
   return (
     <Drawer docked={true} open={navDrawerOpen}>
-      <div style={styles.logo}>Material Admin </div>
+      <div style={styles.logo}>Left Drawer </div>
       {/* <div style={styles.avatar.div}>
                       <Avatar src="http://www.material-ui.com/images/uxceo-128.jpg"
                               size={50}
@@ -65,7 +65,7 @@ const LeftDrawer = props => {
                           containerElement={<Link to={menu.link}/>}
                         />
                       )}
-                    </div> */}{" "}
+                    </div> */}
     </Drawer>
   );
 };
